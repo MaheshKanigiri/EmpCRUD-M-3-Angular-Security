@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../model/employee';
-import { EmployeeService } from '../service/employee.service';
+import { Employee } from '../../model/employee';
+import { EmployeeService } from '../../service/employee.service';
 
 @Component({
   selector: 'app-search-emp',

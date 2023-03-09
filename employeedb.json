@@ -4,7 +4,7 @@
       "id": 2,
       "employeeName": "John",
       "address": "Hyderabad",
-      "phone": 9677345678,
+      "phone": "967734567",
       "country": "India"
     },
     {
@@ -22,18 +22,18 @@
       "country": "Australia"
     },
     {
-      "id": 6,
-      "employeeName": "karan",
-      "address": "#10,Bangalore",
-      "phone": "998298111",
-      "country": "India"
-    },
-    {
       "id": 7,
       "employeeName": "Sana",
       "address": "#2,Delhi",
       "phone": "772672",
       "country": "Pakistan"
+    },
+    {
+      "id": 8,
+      "employeeName": "Tinu",
+      "address": "#6,Svp Colony,Pune",
+      "phone": "87827811",
+      "country": "India"
     }
   ]
 }

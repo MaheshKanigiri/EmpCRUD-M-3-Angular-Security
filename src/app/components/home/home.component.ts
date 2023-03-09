@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Employee } from '../model/employee';
-import { EmployeeService } from '../service/employee.service';
+import { Employee } from '../../model/employee';
+import { EmployeeService } from '../../service/employee.service';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
   searchCountry:string=""
   public employeeList:Employee[]=[];
 
+
+
+  //New-Emp-DTO
   public newEmployee:Employee={
     id:0,
     employeeName:"",
@@ -21,7 +24,7 @@ export class HomeComponent implements OnInit {
     phone:0,
     country:""
   };
-
+  //Del-Emp-DTO
   public delEmployee:Employee={
     id:0,
     employeeName:"",
@@ -29,7 +32,7 @@ export class HomeComponent implements OnInit {
     phone:0,
     country:""
   };
-
+  // Cur-Emp-DTO
   public curEmployee:Employee={
     id:0,
     employeeName:"",
@@ -38,8 +41,8 @@ export class HomeComponent implements OnInit {
     country:""
   };
 
-
   constructor(private employeeService:EmployeeService) { }
+
 
   ngOnInit(): void {
     this.getEmployeeList();
