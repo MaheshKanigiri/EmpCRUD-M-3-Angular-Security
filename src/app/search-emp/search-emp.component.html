@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+
+    <!-- implementing search functionality -->
+    <div class="col-md-4 offset-md-2">
+      <h5>Search Employee By Country:</h5>
+      <input type="search" name="search" id="#1" title="search" [(ngModel)]="searchCountry">
+    </div>
+    <div class="col-md-8 offset-md-2 mt-2">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employeeList | custom:searchCountry">
+            <td appCustomDirective>{{employee.employeeName | titlecase}}</td>
+            <td>{{employee.address}}</td>
+            <td>{{employee.country}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

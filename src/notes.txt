@@ -1,0 +1,13 @@
+1.create angular project using command ng new ProjectName
+2.serve the project using ng serve -o
+3.Create a employeedb.json and fill the data
+4.then run the command to install json -> npm install -g json-server
+5.If you already have the json, then run the watch command -> json-server --watch employeedb.json
+6.Next create the required components using command -> ng g c ComponentName
+7.then create the class and service.
+8.then in app.module.ts add the HttpClientModule.
+9.Implement the required services and with exceptional Handling
+10.Use the service in the components through service-injection in itself.
+11.Access the services through subscribing data and assigning to required Models
+12.Used CustomPipe to search employee by country. [ng g p custom]
+13.Used CustomDirective to give dom elements behavior. [ng g d directive]

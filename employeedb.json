@@ -1,0 +1,39 @@
+{
+  "employees": [
+    {
+      "id": 2,
+      "employeeName": "John",
+      "address": "Hyderabad",
+      "phone": 9677345678,
+      "country": "India"
+    },
+    {
+      "id": 1,
+      "employeeName": "Mahesh",
+      "address": "Telangana",
+      "phone": 9677345678,
+      "country": "India"
+    },
+    {
+      "id": 3,
+      "employeeName": "rohan",
+      "address": "chennai",
+      "phone": "989181",
+      "country": "Australia"
+    },
+    {
+      "id": 6,
+      "employeeName": "karan",
+      "address": "#10,Bangalore",
+      "phone": "998298111",
+      "country": "India"
+    },
+    {
+      "id": 7,
+      "employeeName": "Sana",
+      "address": "#2,Delhi",
+      "phone": "772672",
+      "country": "Pakistan"
+    }
+  ]
+}
