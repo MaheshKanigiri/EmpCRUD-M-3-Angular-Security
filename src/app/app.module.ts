@@ -15,7 +15,10 @@ import { GuardGuard } from './guard/guard.guard';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { AdminComponent } from './components/admin/admin.component';
 import { AuthService } from './service/auth.service';
-
+import { RegisterComponent } from './components/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +28,16 @@ import { AuthService } from './service/auth.service';
     CustomDirectiveDirective,
     SearchEmpComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [AuthService,
    GuardGuard,{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true

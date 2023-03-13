@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
 import { AuthService } from 'src/app/service/auth.service';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ user:User={
   password: ''
 }
 
-constructor(private authService: AuthService, private router: Router) {}
+constructor(private authService: AuthService, private router: Router,
+  private notifyService:NotificationService) {}
   ngOnInit(): void {
   }
 
@@ -23,13 +25,15 @@ constructor(private authService: AuthService, private router: Router) {}
       (data: any) => {
         this.authService.setToken(data.response.accessToken);
         this.authService.setRole(data.response.userRole); // Check if setRole() is being called correctly
+        this.notifyService.showSuccess("User Login Succesfull!")
+       
         this.router.navigate(['home']);
       },
       (error) => {
-        console.log(error);
-        alert("Please Check Email and Password!");
+        this.notifyService.showError("Please Check Email and Password!")
       }
     );
   }
+
 
 }

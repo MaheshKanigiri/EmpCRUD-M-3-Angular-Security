@@ -6,6 +6,7 @@ import { catchError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { throwError } from 'rxjs/internal/observable/throwError';
 import { DecodedToken } from '../model/DecodeToken';
+import { User } from '../model/user-register.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,12 @@ export class AuthService {
   login(email: string, password: string): Observable<any> {
     const body = { email, password };
     return this.http.post(`${this.baseUrl}/login`, body).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  register(user: User): Observable<any> {
+    return this.http.post<any>(this.baseUrl+'/register', user).pipe(
       catchError(this.handleError)
     );
   }
