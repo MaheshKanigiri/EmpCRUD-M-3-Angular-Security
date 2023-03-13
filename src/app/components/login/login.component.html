@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3 offset-md-4">
+      <div class="card" style="width:300px;margin-top:100px">
+        <div class="card-header bg-secondary">Login</div>
+          <form #myForm="ngForm" (submit)="login()" class="p-3">
+            <div class="form-group">
+              <label for="username">Email:</label>
+              <input type="text" class="form-control" id="username" [(ngModel)]="user.email" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary mt-2"><i class="fas fa-user"></i>Login</button>
+            </div>
+          </form>
+          
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-5 offset-md-7">
+      <div class="signup-form">
+        <div class="container">
+          <div class="header">
+            <h1>Create an Account</h1>
+            <p>Get started for free!</p>
+          </div>
+          <form>
+            <div class="input">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="input">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input class="signup-btn" type="submit" value="SIGN UP" />
+          </form>
+          <p>Or sign up with</p>
+          <div class="social-icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-google"></i>
+          </div>
+          <p>Already have an account <a href="#">sign in</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->

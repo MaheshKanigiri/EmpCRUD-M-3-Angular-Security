@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { CustomPipe } from './pipe/custom.pipe';
 import { CustomDirectiveDirective } from './directives/custom-directive.directive';
 import { SearchEmpComponent } from './components/search-emp/search-emp.component';
+import { LoginComponent } from './components/login/login.component';
+import { GuardGuard } from './guard/guard.guard';
+import { TokenInterceptor } from './interceptor/token.interceptor';
+import { AdminComponent } from './components/admin/admin.component';
+import { AuthService } from './service/auth.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,9 @@ import { SearchEmpComponent } from './components/search-emp/search-emp.component
     NavBarComponent,
     CustomPipe,
     CustomDirectiveDirective,
-    SearchEmpComponent
+    SearchEmpComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,9 @@ import { SearchEmpComponent } from './components/search-emp/search-emp.component
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService,
+   GuardGuard,{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,26 @@
-<div class="alert alert-primary" role="alert">
+<!-- <div class="alert alert-primary" role="alert">
   <strong>Employee| Crud Operations</strong>&nbsp;&nbsp;
-<button class="btn btn-outline-dark float-right" routerLink="/search"><i class="fas fa-search"></i>Search</button>
-</div>
+<button class="btn btn-outline-dark float-right" ><i class="fas fa-search"></i>Search</button>
+</div> -->
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4 sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="margin-left:300px">Employee Crud</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarID">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+                </div>
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" (click)="signOut()" href="#">Logout</a>
+              </div>
+              <div class="col-xs">
+                <a [routerLink]="['/admin']" routerLinkActive="router-link-active" ><button class="btn btn-info" style="margin-left:450px"><i class="fas fa-user-secret"  ></i>Admin</button></a>
+              </div>
+            </div>
+        </div>
+    </nav>
