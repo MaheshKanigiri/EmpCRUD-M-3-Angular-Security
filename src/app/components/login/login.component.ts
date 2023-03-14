@@ -23,10 +23,11 @@ constructor(private authService: AuthService, private router: Router,
   login(): void {
     this.authService.login(this.user.email, this.user.password).subscribe(
       (data: any) => {
-        this.authService.setToken(data.response.accessToken);
-        this.authService.setRole(data.response.userRole); // Check if setRole() is being called correctly
+        // console.log(data);
+        this.authService.setToken(data.response.AccessToken);
+        this.authService.setRole(data.response.UserRole); // Check if setRole() is being called correctly
         this.notifyService.showSuccess("User Login Succesfull!")
-       
+
         this.router.navigate(['home']);
       },
       (error) => {

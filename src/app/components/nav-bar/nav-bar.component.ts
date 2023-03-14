@@ -17,6 +17,5 @@ export class NavBarComponent implements OnInit {
   signOut(){
     localStorage.clear()
     this.notify.showInfo("User Logged Out!");
-    this.routes.navigate(['login'])
   }
 }

@@ -1,5 +1,5 @@
 import jwt_decode from 'jwt-decode';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
@@ -13,8 +13,10 @@ import { User } from '../model/user-register.model';
 })
 export class AuthService {
 
+
   baseUrl="https://localhost:7094/api/User"
   constructor(private http:HttpClient,private routes:Router) { }
+
   login(email: string, password: string): Observable<any> {
     const body = { email, password };
     return this.http.post(`${this.baseUrl}/login`, body).pipe(
@@ -27,7 +29,27 @@ export class AuthService {
       catchError(this.handleError)
     );
   }
- 
+
+  forgotPassword(email: string): Observable<any> {
+    const url = `${this.baseUrl}/forgot-password/${email}`;
+    return this.http.post<any>(url, {}).pipe(
+      catchError(this.handleError)
+    );;
+  }
+
+
+  resetPassword(token: string, password: string, confirmPassword: string): Observable<any> {
+    const url = `${this.baseUrl}/reset-password`;
+    const body = {
+      Token: token,
+      Password: password,
+      ConfirmPassword: confirmPassword
+    };
+    return this.http.post(url, body).pipe(
+      catchError(this.handleError)
+    );;
+  }
+
   setRole(response: string): void {
     const userRole: string = response
     localStorage.setItem('role', userRole);
@@ -63,7 +85,7 @@ export class AuthService {
   }
 
 
- 
+
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage = "Unknown Error Occured!"

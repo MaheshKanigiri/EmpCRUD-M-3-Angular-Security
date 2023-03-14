@@ -19,6 +19,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { PasswordComponent } from './components/password/password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     SearchEmpComponent,
     LoginComponent,
     AdminComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordComponent
   ],
   imports: [
     BrowserModule,
